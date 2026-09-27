@@ -1,0 +1,28 @@
+Codex Local Project Recovery (Windows) v1.0.0
+==============================================
+
+This is an UNOFFICIAL community recovery utility for the Windows Codex Desktop
+failure mode where local Projects disappear but the underlying SQLite data and
+chats still exist.
+
+Recommended order:
+
+1. Extract the whole ZIP.
+2. Run Diagnose.ps1 first. It is read-only and creates a redacted report.
+3. Read README.md, especially the duplicate-project and orphan-assignment notes.
+4. Fully exit Codex / ChatGPT Desktop (including background ChatGPT.exe/Codex.exe).
+5. Run Repair.ps1.
+6. Review the plan, then type REPAIR only if it looks correct.
+7. Reopen Codex and verify Projects before creating/deleting anything.
+
+The repair:
+- backs up the relevant state first;
+- NEVER writes to Codex SQLite;
+- NEVER modifies your repositories;
+- only rebuilds the Desktop global-state JSON catalog/associations;
+- leaves ambiguous/unmatched chats alone by default.
+
+Backups are stored under:
+%USERPROFILE%\CodexProjectRecoveryBackups\
+
+For details, open README.md.
